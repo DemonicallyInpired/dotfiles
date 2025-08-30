@@ -1,0 +1,10 @@
+vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", { desc = "Open the Parent Directory in Oil" })
+
+vim.keymap.set("n", "<C-a>", "maggVG", { desc = "select all the text in the buffer" })
+vim.keymap.set("x", "<C-c>", "y`a", { desc = "copy all the selected text" })
+vim.keymap.set("n", "gl", function()
+	vim.diagnostic.open_float()
+end, { desc = "Open diagnostics in float" })
+vim.keymap.set("n", "<leader>cf", function()
+	require("conform").format({ lsp_format = "fallback" })
+end, { desc = "format current file" })
